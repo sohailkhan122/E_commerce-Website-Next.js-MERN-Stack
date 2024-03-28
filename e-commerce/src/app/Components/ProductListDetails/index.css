@@ -1,0 +1,23 @@
+.productListSidebar {
+    width: 295px;
+    height: max-content;
+    padding-bottom: 100px;
+    border-radius: 0px, 0px, 2px, 2px;
+    border: 0px, 1px, 1px, 1px;
+    border: 1px solid #BEBCBD;
+    opacity: 0.8px;
+}
+
+.productListBox {
+    width: 940px;
+    height: max-content;
+    padding-bottom: 100px;
+}
+
+.productListSidebarContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin: auto 0;
+}

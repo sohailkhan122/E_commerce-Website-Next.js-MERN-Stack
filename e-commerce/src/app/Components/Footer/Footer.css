@@ -1,0 +1,214 @@
+.mainFooterContainer {
+  width: 100%;
+  height: 731px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #3c4242;
+}
+
+.footerContentContainer {
+  width: 1220px;
+  height: 613px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerInfo {
+  width: 1059px;
+  height: 292px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.NeedHelp {
+  display: inline-flex;
+  width: "142px";
+  height: 292px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.NeedHelp h3 {
+  color: #f6f6f6;
+  font-size: 28.579px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.9%;
+}
+
+.NeedHelp ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  list-style: none;
+  color: #f6f6f6;
+  flex-shrink: 0;
+}
+
+.NeedHelp ul li {
+  color: #f6f6f6;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 216.9%;
+}
+
+.Company {
+  width: 121px;
+  height: 292px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.Company h3 {
+  color: #f6f6f6;
+  font-size: 28.579px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.9%;
+}
+
+.Company ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  list-style: none;
+  color: #f6f6f6;
+  flex-shrink: 0;
+}
+
+.Company ul li {
+  color: #f6f6f6;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 216.9%;
+}
+
+.MoreInfo {
+  width: 162px;
+  height: 248px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.MoreInfo h3 {
+  color: #f6f6f6;
+  font-size: 28.579px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.9%;
+}
+
+.MoreInfo ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  list-style: none;
+  color: #f6f6f6;
+  flex-shrink: 0;
+}
+
+.MoreInfo ul li {
+  color: #f6f6f6;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 216.9%;
+}
+
+.Location {
+  width: 394px;
+  height: 204px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+.Location h3 {
+  color: #f6f6f6;
+  font-size: 28.579px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 216.9%;
+}
+
+.Location ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  list-style: none;
+  color: #f6f6f6;
+  flex-shrink: 0;
+}
+
+.Location ul li {
+  color: #f6f6f6;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 350;
+  line-height: 216.9%;
+}
+
+.GooglePlay {
+  display: flex;
+  gap: 5px;
+}
+
+.GooglePlay p {
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.GooglePlay h4 {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.AppStore {
+  display: flex;
+  gap: 5px;
+}
+
+.AppStore p {
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.AppStore h4 {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

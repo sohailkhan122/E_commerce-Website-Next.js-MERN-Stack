@@ -1,0 +1,18 @@
+.changeButtonColor {
+    background-color: #8A33FD;
+}
+
+.changeButtonColor:hover {
+    color: white;
+}
+
+.background {
+    background-color: #8A33FD;
+    color: white;
+}
+
+.selectedButton {
+   border: 2px solid #8A33FD !important;
+    color: black !important;
+}
+

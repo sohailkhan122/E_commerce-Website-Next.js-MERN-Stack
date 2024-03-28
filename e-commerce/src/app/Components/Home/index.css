@@ -1,0 +1,454 @@
+.MainSummerValuePackContainer {
+  width: 100%;
+  height: 716px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.summerValuePackContainer {
+  display: flex;
+  width: 439px;
+  height: 455px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-left: 170px;
+  padding-top: 160px;
+}
+
+.summerValuePackContainer h5 {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 37.771px;
+  letter-spacing: 0.157px;
+}
+
+.summerValuePackContainer h1 {
+  color: #fff;
+  font-size: 78px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 93.622px;
+  letter-spacing: 0.315px;
+}
+
+.summerValuePackContainer h4 {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 47.214px;
+  letter-spacing: 0.315px;
+}
+
+.summerValuePackContainer button {
+  display: flex;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 22px 72px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.firstCard {
+  width: 604.93px;
+  height: 356.2px;
+  border-radius: 12px;
+  background: url("/Images/Deals 1.png"),
+    lightgray -106.346px -9.514px / 187.226% 212.215% no-repeat;
+}
+
+.secondCard {
+  width: 604.93px;
+  height: 356.2px;
+  border-radius: 12px;
+  background: url("/Images/Deals 2.png"),
+    lightgray -106.346px -9.514px / 187.226% 212.215% no-repeat;
+}
+
+.dealsCard {
+  display: flex;
+  width: 1239.87px;
+  height: 356.2px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.newArrivalContainer {
+  width: 1238.59px;
+  height: 415.67px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-bottom: 70px;
+}
+
+.newArrivalTittle {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.newArrivalTittle {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 33.5px;
+}
+
+.newArrivalCards {
+  width: 1167px;
+  height: 319.67px;
+  display: flex;
+  justify-content: center;
+  gap: 38.58px;
+}
+
+.arrivalCard {
+  width: 262.81px;
+  height: 319.67px;
+  display: flex;
+  flex-direction: column;
+  gap: 38.58px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.arrivalCard img {
+  object-fit: cover;
+  width: 262.81px;
+  height: 262.81px;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.arrivalCard span {
+  color: #3c4242;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+
+.bigSavingZoneContent {
+  width: 1240px;
+  height: 908px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.bigSavingCard {
+  background: url("/Images/Big Saving Zone 5.png");
+  width: 400px;
+  height: 393px;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.bigSavingCard1 {
+  background: url("/Images/Big Saving Zone 6.png");
+  width: 400px;
+  height: 393px;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.bigSavingCard2 {
+  background: url("/Images/Big Saving Zone 3.png");
+  width: 400px;
+  height: 393px;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.bigSavingCard3 {
+  background: url("/Images/Big Saving Zone 2.png");
+  width: 610px;
+  height: 393px;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.bigSavingCard4 {
+  background: url("/Images/Big Saving Zone 4.png");
+  width: 610px;
+  height: 393px;
+  display: flex;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+
+.bigSavingCardContent {
+  width: 147px;
+  height: 263.84px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.bigSavingCardContent span {
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 38.431px;
+  letter-spacing: 0.56px;
+}
+
+.bigSavingCardInnerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bigSavingCardInnerContent p {
+  color: #fff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bigSavingCardInnerContent h6 {
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bigSavingCardContent button {
+  display: flex;
+  width: 111px;
+  height: 34px;
+  padding: 16px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  color: white;
+  background: none;
+  cursor: pointer;
+}
+
+.fastionBetterContent {
+  width: 1240px;
+  height: 640.06px;
+  display: flex;
+}
+
+.fastionBetterCard1 {
+  width: 614px;
+  height: 639.72px;
+  background: url("/Images/Big Saving Zone 1.png");
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fastionBetterCard2 {
+  width: 614px;
+  height: 639.72px;
+  background: url("/Images/SignUp.png");
+  border-radius: 5px;
+}
+
+.fastionBetterCardContent {
+  width: 466px;
+  height: 282px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fastionBetterCardContent h1 {
+  height: 84px;
+  color: #fff;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 50px;
+  letter-spacing: 0.208px;
+}
+
+.fastionBetterCardContent h4 {
+  width: 451px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.fastionBetterCardContent button {
+  width: 168px;
+  padding: 12px 44px;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.categoriesForMenContainer {
+  width: 1240px;
+  height: fit-content;
+}
+
+.categorieMenCardContent {
+  width: 270.36px;
+  height: 451.35px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.categorieMenCardContentTittle p {
+  color: #2a2f2f;
+  font-size: 17.875px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 27.93px;
+  letter-spacing: -0.715px;
+}
+
+.categorieMenCardContentTittle span {
+  color: #7f7f7f;
+  font-family: Causten;
+  font-size: 13.407px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 27.93px;
+  letter-spacing: -0.536px;
+}
+
+.categoriesForWomenContainer {
+  width: 1239px;
+  height: 553px;
+}
+
+.topBrandContainer {
+  width: 1233px;
+  height: 357.17px;
+  border-radius: 12px;
+  border: 1.069px solid var(--Dark-Grey---Fashion, #323232);
+  background: #3c4242;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBrandContainer h1 {
+  color: #fff;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  padding-top: 40px;
+}
+
+.topBrandContainer p {
+  color: #fff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.brands {
+  width: 985.97px;
+  height: 85.55px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedbackContainer {
+  width: 1237px;
+  height: 430.19px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.feedbackCardContainer {
+  width: 1237px;
+  height: 292px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedbackcard {
+  width: 396.87px;
+  height: 292px;
+  display: flex;
+  padding: 23.194px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1.8px solid #bebcbd;
+  background: #fff;
+}
+
+.feedbackcard h4 {
+  color: #3c4242;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.44px;
+}
+
+.feedbackcard p {
+  overflow: hidden;
+  color: #807d7e;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+
+.mainLimeLightContainer {
+  width: 1238px;
+  height: 543px;
+  display: flex;
+  justify-content: center;
+}
