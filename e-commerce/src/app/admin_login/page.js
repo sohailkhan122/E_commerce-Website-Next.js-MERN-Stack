@@ -1,9 +1,9 @@
 import React from 'react'
 import AdminLogin from '../Components/Authentication/AdminLogin/indec'
 
-const page = () => {
+const Page = () => {
   return (
     <AdminLogin />
   )
 }
-export default page
+export default Page

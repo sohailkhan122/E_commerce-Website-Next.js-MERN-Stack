@@ -3,7 +3,7 @@ import Error from "../Components/Error/Error";
 import Header from "../Components/Header/header";
 import Footer from "../Components/Footer/Footer";
 
-const page = () => {
+const Page = () => {
   return (
     <div
       style={{
@@ -20,4 +20,4 @@ const page = () => {
     </div>
   );
 };
-export default page;
+export default Page;

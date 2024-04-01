@@ -1,8 +1,8 @@
 import SignUp from '../Components/Authentication/SignIn'
 
-const page = () => {
+const Page = () => {
   return (
     <SignUp />
   )
 }
-export default page
+export default Page

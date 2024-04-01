@@ -2,10 +2,10 @@
 import React from 'react'
 import ProductList from '../../Components/ProductListDetails'
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   return (<>
     <ProductList route={params} />
   </>
   )
 }
-export default page
+export default Page

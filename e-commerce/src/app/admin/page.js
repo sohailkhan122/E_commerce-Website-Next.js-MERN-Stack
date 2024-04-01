@@ -1,9 +1,9 @@
 import React from 'react'
 import AdminDashboard from '../Components/Admin'
 
-const page = () => {
+const Page = () => {
   return (
     <AdminDashboard />
   )
 }
-export default page
+export default Page

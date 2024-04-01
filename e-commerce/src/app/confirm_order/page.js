@@ -1,8 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import React from 'react'
 
-const page = () => {
+const Page = () => {
   const router = useRouter()
   return (
     <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -10,4 +9,4 @@ const page = () => {
     </div>
   )
 }
-export default page
+export default Page
