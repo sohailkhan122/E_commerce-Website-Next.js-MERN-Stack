@@ -64,7 +64,7 @@ const CategoriesForWomen = () => {
         ) : (
           <Slider {...settings}>
             {products.map((product) => (
-              <CategorieWomenCard key={product._id} product={product} onClick={() => router.push(`/ProductDetail/${product._id}`)} />
+              <CategorieWomenCard key={product._id} product={product} onClick={() => router.push(`/product_details/${product._id}`)} />
             ))}
           </Slider>
         )}

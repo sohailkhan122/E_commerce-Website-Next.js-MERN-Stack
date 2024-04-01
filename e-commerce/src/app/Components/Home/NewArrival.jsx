@@ -64,7 +64,7 @@ const NewArrival = () => {
         ) : (
           <Slider {...settings}>
             {products.map((product) => (
-              <ArrivalCard key={product._id} product={product} onClick={() => router.push(`/ProductDetail/${product._id}`)} />
+              <ArrivalCard key={product._id} product={product} onClick={() => router.push(`/product_details/${product._id}`)} />
             ))}
           </Slider>
         )}

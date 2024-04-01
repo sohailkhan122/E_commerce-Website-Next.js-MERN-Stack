@@ -4,7 +4,6 @@ import { Button, Spin, message } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import './productDetails.css';
-import { useRouter } from 'next/navigation';
 import noteContext from '@/context/noteContext';
 
 const ProductDetails = ({ route }) => {
@@ -14,7 +13,6 @@ const ProductDetails = ({ route }) => {
     const [size, setSize] = useState(null);
     const [color, setColor] = useState(null);
     const userData = JSON.parse(localStorage.getItem("userData"));
-    const router = useRouter()
     const [addingToCart, setAddingToCart] = useState(false);
     const { setRefresh } = useContext(noteContext)
 

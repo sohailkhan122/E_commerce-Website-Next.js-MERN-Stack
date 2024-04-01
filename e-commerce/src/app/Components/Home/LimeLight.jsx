@@ -64,7 +64,7 @@ const LimeLight = () => {
         ) : (
           <Slider {...settings}>
             {products.map((product) => (
-              <LimeLightCard key={product._id} product={product} onClick={() => router.push(`/ProductDetail/${product._id}`)} />
+              <LimeLightCard key={product._id} product={product} onClick={() => router.push(`/product_details/${product._id}`)} />
             ))}
           </Slider>
         )}

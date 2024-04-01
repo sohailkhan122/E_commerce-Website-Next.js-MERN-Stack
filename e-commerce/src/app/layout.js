@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   const pathname = usePathname()
-  const shouldRenderHeaderAndFooter = pathname !== '/signin' && pathname !== '/login' && pathname !== '/admin' && pathname !== '/adminLogin';
+  const shouldRenderHeaderAndFooter = pathname !== '/signin' && pathname !== '/login' && pathname !== '/admin' && pathname !== '/admin_login';
 
   return (
     <html lang="en">

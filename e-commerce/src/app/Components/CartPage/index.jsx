@@ -109,7 +109,7 @@ const CartPage = () => {
             });
 
             await Promise.all(updateRequests);
-            router.push('/checkOut')
+            router.push('/check_out')
             message.success('Cart items updated successfully');
         } catch (error) {
             console.error('Error updating cart items:', error);

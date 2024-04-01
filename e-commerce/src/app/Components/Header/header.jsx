@@ -39,7 +39,7 @@ const Header = () => {
   }, [refresh]);
 
   const handleCartClick = () => {
-    router.push('/CartPage');
+    router.push('/cart_page');
   };
 
   return (
@@ -54,9 +54,9 @@ const Header = () => {
         </div>
         <div className="headerButton">
           <span className={pathname === '/' ? 'boldText' : ''} onClick={() => router.push('/')}>Shop</span>
-          <span className={pathname === '/ProductList/men' ? 'boldText' : ''} onClick={() => router.push(`/ProductList/${'men'}`)}>Men</span>
-          <span className={pathname === '/ProductList/women' ? 'boldText' : ''} onClick={() => router.push(`/ProductList/${'women'}`)}>Women</span>
-          <span className={pathname === '/ProductList/joggers' ? 'boldText' : ''} onClick={() => router.push(`/ProductList/${'joggers'}`)}>Joggers</span>
+          <span className={pathname === '/product_list/men' ? 'boldText' : ''} onClick={() => router.push(`/product_list/${'men'}`)}>Men</span>
+          <span className={pathname === '/product_list/women' ? 'boldText' : ''} onClick={() => router.push(`/product_list/${'women'}`)}>Women</span>
+          <span className={pathname === '/product_list/joggers' ? 'boldText' : ''} onClick={() => router.push(`/product_list/${'joggers'}`)}>Joggers</span>
         </div>
         <div>
           <Button
@@ -71,7 +71,7 @@ const Header = () => {
             style={{ width: "44px", height: "44px" }}
             icon={<HeartOutlined />}
           />
-          <Button className={pathname === '/MyOrder' ? 'background' : ''} onClick={() => router.push('/MyOrder')}
+          <Button className={pathname === '/MyOrder' ? 'background' : ''} onClick={() => router.push('/my_order')}
             style={{ width: "44px", height: "44px" }}
             icon={<UserOutlined />}
           />

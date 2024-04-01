@@ -26,7 +26,7 @@ const PaymentCard = ({ productDetails, total }) => {
             });
             console.log(response.data)
             setRefresh(pre => !pre)
-            router.push('/ConfirmOrder')
+            router.push('/confirm_order')
         } catch (error) {
             console.error(error);
             throw error;

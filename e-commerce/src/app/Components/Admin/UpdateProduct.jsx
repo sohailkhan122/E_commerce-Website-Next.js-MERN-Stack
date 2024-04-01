@@ -125,7 +125,7 @@ const UpdateProduct = () => {
             dataIndex: 'images',
             key: 'images',
             render: (images) => (
-                <img src={images} alt="Product" style={{ width: 50 }} />
+                <Image src={images} alt="Product" style={{ width: 50 }} />
             ),
         },
         {

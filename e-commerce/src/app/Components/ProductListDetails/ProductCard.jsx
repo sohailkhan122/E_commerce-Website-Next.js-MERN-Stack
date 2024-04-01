@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 const ProductCard = ({ data }) => {
   const router = useRouter();
   return (
-    <div onClick={() => router.push(`/ProductDetail/${data._id}`)} key={data.id} style={{ paddingTop: '16px' }} className="categorieMenCardContent"  >
+    <div onClick={() => router.push(`/product_details/${data._id}`)} key={data.id} style={{ paddingTop: '16px' }} className="categorieMenCardContent"  >
       <img
         src={data.images}
         alt='hello'

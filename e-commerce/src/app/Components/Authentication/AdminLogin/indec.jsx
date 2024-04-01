@@ -41,7 +41,7 @@ const AdminLogin = () => {
           <div className="headerButton">
             <Button onClick={() => router.push('/login')}>Login</Button>
             <Button onClick={() => router.push('/signin')}>SignUp</Button>
-            <Button style={{ backgroundColor: 'red', color: 'white' }} onClick={() => router.push('/adminLogin')}>Admin</Button>
+            <Button style={{ backgroundColor: 'red', color: 'white' }} onClick={() => router.push('/admin_login')}>Admin</Button>
           </div>
         </div>
       </header>
