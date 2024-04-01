@@ -18,10 +18,11 @@ const Footer = () => {
             <ul>
               <li>Contact Us</li>
               <li>Track Order</li>
-              <li>Returns & Refunds</li>
-              <li>FAQ's</li>
+              <li>Returns &amp; Refunds</li> {/* Use &amp; for & symbol */}
+              <li>FAQ&apos;s</li> {/* Corrected apostrophe */}
               <li>Career</li>
             </ul>
+
           </div>
           <div className="Company">
             <h3>Company</h3>
