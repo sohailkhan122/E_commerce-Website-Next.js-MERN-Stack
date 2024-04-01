@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Error from "../Components/Error/Error";
 import Header from "../Components/Header/header";
