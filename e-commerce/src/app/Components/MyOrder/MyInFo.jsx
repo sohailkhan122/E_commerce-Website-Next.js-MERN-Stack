@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
 const MyInfo = () => {
-    const userId = JSON.parse(localStorage.getItem('userData'))._id;
+    const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
     const [loading, setLoading] = useState(false);
     const router = useRouter();
     const [userData, setUserData] = useState(null);

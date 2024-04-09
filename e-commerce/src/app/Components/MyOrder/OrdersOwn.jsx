@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 const OrdersOwn = ({ setValue }) => {
   const [orders, setOrders] = useState([]);
-  const userId = JSON.parse(localStorage.getItem('userData'))._id;
+  const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
   const router = useRouter()
 
   useEffect(() => {

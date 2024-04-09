@@ -3,10 +3,13 @@ import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
     const [refresh, setRefresh] = useState(false)
+    const [userId, setuserId] = useState(null)
     return (
         <NoteContext.Provider value={{
             refresh,
-            setRefresh
+            setRefresh,
+            userId,
+            setuserId
         }}>
             {props.children}
         </NoteContext.Provider>

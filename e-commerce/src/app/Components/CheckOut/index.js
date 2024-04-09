@@ -8,7 +8,6 @@ import axios from 'axios'
 import PaymentCard from './PaymentCard'
 
 const CheckOut = () => {
-  const userId = JSON.parse(localStorage.getItem('userData'))._id;
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [userData, setUserData] = useState(null);
@@ -16,17 +15,19 @@ const CheckOut = () => {
   const shippingCharges = 5.8;
 
   useEffect(() => {
+    const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
+    if (!userId) return;
     const getUserById = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/user/getUserById/${userId}`);
-        setUserData(response.data)
+        setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user by ID:', error);
         throw new Error('Failed to fetch user by ID');
       }
     };
-    getUserById()
-  }, [userId])
+    getUserById();
+  }, []);
 
   const onFinish = async (values) => {
     try {
@@ -42,13 +43,15 @@ const CheckOut = () => {
   };
 
   useEffect(() => {
+    const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
+    if (!userId) return; // Exit early if userId is not available
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/cart/getCartItem/${userId}`);
         const { products } = response.data.cartItem;
 
         if (response.data.cartItem.products.length === 0) {
-          router.push('/')
+          router.push('/');
         }
 
         const productDetailPromises = products.map(async product => {
@@ -65,11 +68,10 @@ const CheckOut = () => {
     };
 
     fetchData();
-
-  }, [userId]);
+  }, []);
 
   const subtotal = productDetails.reduce((accum, curr) => accum + curr.price * curr.quantity, 0);
-  const total = subtotal + shippingCharges
+  const total = subtotal + shippingCharges;
 
   return (<div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: 'maxcontent', marginBottom: '200px' }}>
     <div className='BiilingAndOrderSummaryContainer'>

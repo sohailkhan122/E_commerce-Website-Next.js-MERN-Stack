@@ -12,9 +12,9 @@ const ProductDetails = ({ route }) => {
     const [error, setError] = useState(null);
     const [size, setSize] = useState(null);
     const [color, setColor] = useState(null);
-    const userData = JSON.parse(localStorage.getItem("userData"));
     const [addingToCart, setAddingToCart] = useState(false);
     const { setRefresh } = useContext(noteContext)
+    const { userId } = useContext(noteContext);
 
 
     useEffect(() => {
@@ -56,7 +56,7 @@ const ProductDetails = ({ route }) => {
                 productId: product._id,
                 size,
                 color,
-                userId: userData._id
+                userId: userId
             });
             // router.push("/CartPage");
             message.success("Product Add In Your Cart")

@@ -1,13 +1,11 @@
 'use client'
 import React, { useState } from 'react';
 import { Button, Checkbox, Form, Input, Spin } from 'antd';
-import { usePathname } from 'next/navigation';
-import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const LogIn = () => {
   const [loading, setLoading] = useState(false);
-  const pathname = usePathname();
   const router = useRouter();
 
   const onFinish = async (values) => {
@@ -30,7 +28,7 @@ const LogIn = () => {
 
   return (
     <div style={{ width: '100%', height: '100vh' }}>
-      <header style={{ width: '100%', height: '60px', display: 'flex', alignItems: 'center' }} >
+      <header style={{ width: '100%', height: '60px', display: 'flex', alignItems: 'center' }}>
         <div style={{ width: '100%', justifyContent: 'space-around', gap: '100px' }} className="headerContent">
           <div>
             <img
@@ -40,7 +38,7 @@ const LogIn = () => {
             />
           </div>
           <div className="headerButton">
-            <Button type="primary" className={pathname === '/login' ? 'changeButtonColor' : ''}>Login</Button>
+            <Button type="primary" className={router.pathname === '/login' ? 'changeButtonColor' : ''}>Login</Button>
             <Button onClick={() => router.push('/signin')}>SignUp</Button>
             <Button style={{ backgroundColor: 'red', color: 'white' }} onClick={() => router.push('/admin_login')}>Admin</Button>
           </div>
@@ -106,3 +104,4 @@ const LogIn = () => {
 };
 
 export default LogIn;
+

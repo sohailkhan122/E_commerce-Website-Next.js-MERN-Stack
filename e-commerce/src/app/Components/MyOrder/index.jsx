@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
 import { Button } from "antd";
 import {
@@ -18,14 +18,18 @@ const MyOrder = () => {
   const [value, setValue] = useState('myInfo');
   const router = useRouter();
 
+  const handleLogOutClick = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.clear();
+      router.push('/login');
+    }
+  };
+
+
   const handleButtonClick = (val) => {
     setValue(val);
   };
-  const handleLogOutClick = () => {
-    localStorage.clear()
-    router.push('/login')
 
-  }
   return (
     <div style={{ display: "flex" }}>
       <div className="mainSidebarContainer">
@@ -88,4 +92,5 @@ const MyOrder = () => {
 };
 
 export default MyOrder;
+
 
