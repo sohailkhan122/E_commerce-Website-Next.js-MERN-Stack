@@ -16,7 +16,7 @@ const UserLogin = () => {
             }
         };
         fetchAllUsers();
-    }, []);
+    }, [users]);
 
     const columns = [
         {
