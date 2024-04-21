@@ -15,7 +15,7 @@ const CategoriesForWomen = () => {
   useEffect(() => {
     const fetchProductsByName = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/product/productGetByName/${'Categories_For_Women'}`);
+        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/${'Categories_For_Women'}`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

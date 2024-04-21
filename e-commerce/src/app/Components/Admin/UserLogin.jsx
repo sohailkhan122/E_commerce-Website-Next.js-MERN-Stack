@@ -9,7 +9,7 @@ const UserLogin = () => {
     useEffect(() => {
         const fetchAllUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/user/getAllUsers');
+                const response = await axios.get('https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/getAllUsers');
                 setUsers(response.data.data)
             } catch (error) {
                 console.error('Failed to fetch users:', error);

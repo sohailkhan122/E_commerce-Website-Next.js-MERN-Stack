@@ -11,7 +11,7 @@ const OrderDetails = ({ orderId, setSelectedOrderId }) => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/order/getOrderById/${orderId}`);
+        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/getOrderById/${orderId}`);
         setOrder(response.data.order);
         setLoading(false);
       } catch (error) {

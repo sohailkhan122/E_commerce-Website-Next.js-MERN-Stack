@@ -19,7 +19,7 @@ const OrderList = () => {
     const fetchAllOrders = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/order/fatchAllOrders');
+        const response = await axios.get('https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/fatchAllOrders');
         setOrders(response.data);
         const filterPending = response.data.filter((item) => item.status.toLowerCase().includes('pending'));
         setPending(filterPending.length);
@@ -41,7 +41,7 @@ const OrderList = () => {
   const handleUpdateStatus = async (orderId, status) => {
     try {
       setLoading(true);
-      const response = await axios.put(`http://localhost:5000/order/updateOrderStatus/${orderId}`, { status });
+      const response = await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/updateOrderStatus/${orderId}`, { status });
       setRefresh(prev => !prev);
       return response.data;
     } catch (error) {

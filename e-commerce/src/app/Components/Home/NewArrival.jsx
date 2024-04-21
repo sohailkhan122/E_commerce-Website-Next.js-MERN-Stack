@@ -15,7 +15,7 @@ const NewArrival = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/product/productGetByName/New_Arrival");
+        const response = await axios.get("https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/New_Arrival");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

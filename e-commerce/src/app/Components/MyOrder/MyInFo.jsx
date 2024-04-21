@@ -14,7 +14,7 @@ const MyInfo = () => {
     useEffect(() => {
         const getUserById = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/user/getUserById/${userId}`);
+                const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/getUserById/${userId}`);
                 setUserData(response.data)
             } catch (error) {
                 console.error('Error fetching user by ID:', error);
@@ -28,7 +28,7 @@ const MyInfo = () => {
     const onFinish = async (values) => {
         try {
             setLoading(true);
-            await axios.put(`http://localhost:5000/user/updateUser/${userId}`, values);
+            await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/updateUser/${userId}`, values);
             message.success('User information updated successfully');
             router.push('/')
         } catch (error) {

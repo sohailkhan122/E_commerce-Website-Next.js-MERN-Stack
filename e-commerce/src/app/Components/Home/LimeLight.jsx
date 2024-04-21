@@ -15,7 +15,7 @@ const LimeLight = () => {
   useEffect(() => {
     const fetchProductsByName = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/product/productGetByName/${'In_The_Limelight'}`);
+        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/${'In_The_Limelight'}`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

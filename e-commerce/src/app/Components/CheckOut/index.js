@@ -19,7 +19,7 @@ const CheckOut = () => {
     if (!userId) return;
     const getUserById = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/user/getUserById/${userId}`);
+        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/getUserById/${userId}`);
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user by ID:', error);
@@ -32,7 +32,7 @@ const CheckOut = () => {
   const onFinish = async (values) => {
     try {
       setLoading(true);
-      await axios.put(`http://localhost:5000/user/updateUser/${userId}`, values);
+      await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/updateUser/${userId}`, values);
       message.success('User information updated successfully');
     } catch (error) {
       message.error('Failed to update user information');
@@ -47,7 +47,7 @@ const CheckOut = () => {
     if (!userId) return; // Exit early if userId is not available
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/cart/getCartItem/${userId}`);
+        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/getCartItem/${userId}`);
         const { products } = response.data.cartItem;
 
         if (response.data.cartItem.products.length === 0) {
@@ -55,7 +55,7 @@ const CheckOut = () => {
         }
 
         const productDetailPromises = products.map(async product => {
-          const productDetailResponse = await axios.get(`http://localhost:5000/product/getSingleProduct/${product.productId}`);
+          const productDetailResponse = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/getSingleProduct/${product.productId}`);
           const productDetail = productDetailResponse.data;
           return { ...product, ...productDetail };
         });

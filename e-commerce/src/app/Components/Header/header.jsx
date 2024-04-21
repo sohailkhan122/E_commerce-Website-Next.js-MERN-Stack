@@ -27,7 +27,7 @@ const Header = () => {
     } else {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/cart/getCartItem/${userId._id}`);
+          const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/getCartItem/${userId._id}`);
           setProductsLength(response.data.cartItem.products.length);
         } catch (error) {
           console.error('Error fetching data:', error);

@@ -11,7 +11,7 @@ const LogIn = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/user/login', values);
+      const response = await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/login', values);
       console.log('Success:', response.data);
       localStorage.setItem("userData", JSON.stringify(response.data));
       router.push('/');

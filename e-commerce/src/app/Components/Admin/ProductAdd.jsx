@@ -13,7 +13,7 @@ const ProductAdd = () => {
   const onFinish = async (values) => {
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/product/createProduct', {
+      const response = await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/createProduct', {
         title: values.title,
         productName: values.productName,
         category: values.category,
