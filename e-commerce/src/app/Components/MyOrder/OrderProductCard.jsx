@@ -8,7 +8,7 @@ const OrderProductCard = ({ items, orderId, setValue }) => {
 
     const deleteOrder = async () => {
         try {
-            const response = await axios.delete(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/removeProductDetail/${items._id}/${orderId}`);
+            const response = await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/order/removeProductDetail/${items._id}/${orderId}`);
             console.log(response)
             setValue('Myorders')
             message.success('Order Successfully Delete')

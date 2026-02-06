@@ -14,7 +14,7 @@ const OrderDetails = ({ setValue }) => {
     useEffect(() => {
         const fetchOrdersByUserId = async () => {
             try {
-                const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/getOrdersByUserId/${userId}`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/order/getOrdersByUserId/${userId}`);
                 const { data } = response;
 
                 if (data.success) {

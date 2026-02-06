@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import CategorieWomenCard from "./CategorieWomenCard";
 import axios from "axios";
@@ -15,7 +16,7 @@ const CategoriesForWomen = () => {
   useEffect(() => {
     const fetchProductsByName = async () => {
       try {
-        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/${'Categories_For_Women'}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/productGetByName/${'Categories_For_Women'}`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

@@ -27,7 +27,7 @@ const CartPage = () => {
         if (userData._id) {
             const fetchData = async () => {
                 try {
-                    const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/getCartItem/${userData._id}`);
+                    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cart/getCartItem/${userData._id}`);
                     if (response.data.cartItem) {
                         const productIdsWithQuantity = response.data.cartItem.products.reduce((accumulator, product) => {
                             accumulator[product.productId] = product.quantity;
@@ -36,7 +36,7 @@ const CartPage = () => {
 
                         const productIds = response.data.cartItem.products.map(product => product.productId);
                         const productDetailPromises = productIds.map(productId =>
-                            axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/getSingleProduct/${productId}`)
+                            axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/getSingleProduct/${productId}`)
                         );
                         const productDetails = await Promise.all(productDetailPromises);
 
@@ -89,7 +89,7 @@ const CartPage = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/deleteCartProducts/${id}/${userData._id}`);
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/cart/deleteCartProducts/${id}/${userData._id}`);
             message.success('Product removed from cart');
             setRefresh(pre => !pre)
         } catch (error) {
@@ -102,7 +102,7 @@ const CartPage = () => {
         try {
             setCheckoutLoading(true);
             const updateRequests = productDetails.map(async (item) => {
-                await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/updatequantiity/${userData._id}`, {
+                await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/cart/updatequantiity/${userData._id}`, {
                     productId: item._id,
                     quantity: item.quantity
                 });

@@ -1,6 +1,6 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
-import { Button, Checkbox, Form, Input, Spin } from 'antd';
+import { Button, Checkbox, Form, Input, message, Spin } from 'antd';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
@@ -11,12 +11,12 @@ const LogIn = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/login', values);
-      console.log('Success:', response.data);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/login`, values);
+      message.success('Login successful!');
       localStorage.setItem("userData", JSON.stringify(response.data));
       router.push('/');
     } catch (error) {
-      console.error('Error:', error);
+      message.error(error.response.data.error);
     } finally {
       setLoading(false);
     }

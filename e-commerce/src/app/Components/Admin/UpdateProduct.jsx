@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import { Spin, Table, Button, Popconfirm, message, Input, Form, Select } from 'antd';
 import axios from 'axios';
@@ -17,7 +18,7 @@ const UpdateProduct = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get('https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/getAllProducts');
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/getAllProducts`);
                 setProducts(response.data);
                 setLoading(false);
             } catch (error) {
@@ -31,7 +32,7 @@ const UpdateProduct = () => {
     const handleDelete = async (productId) => {
         try {
             setDeleteLoading(prevState => ({ ...prevState, [productId]: true }));
-            await axios.delete(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/deleteProducts/${productId}`);
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/product/deleteProducts/${productId}`);
             setProducts(products.filter(product => product._id !== productId));
             message.success('Product deleted successfully');
         } catch (error) {
@@ -61,7 +62,7 @@ const UpdateProduct = () => {
         try {
             const values = await form.validateFields();
             const updatedProduct = { ...editedProduct, ...values, images: imageUrl };
-            await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/editProduct/${editedProduct._id}`, updatedProduct);
+            await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/product/editProduct/${editedProduct._id}`, updatedProduct);
             message.success('Product updated successfully');
             setRefresh(!refresh);
             setEditMode(false);

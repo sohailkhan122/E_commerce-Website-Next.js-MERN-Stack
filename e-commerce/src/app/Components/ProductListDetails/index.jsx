@@ -35,7 +35,7 @@ const ProductCategoryList = ({ route }) => {
                         break;
                 }
 
-                const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/${categorySlug}`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/productGetByName/${categorySlug}`);
                 setProducts(response.data);
                 setOriginalProducts(response.data);
             } catch (error) {

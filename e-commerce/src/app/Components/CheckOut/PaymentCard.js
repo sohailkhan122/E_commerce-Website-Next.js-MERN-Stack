@@ -13,7 +13,7 @@ const PaymentCard = ({ productDetails, total }) => {
 
     const onFinish = async (values) => {
         try {
-            const response = await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/order/createOrder', {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/order/createOrder`, {
                 userId: userId,
                 productDetails,
                 total: total,

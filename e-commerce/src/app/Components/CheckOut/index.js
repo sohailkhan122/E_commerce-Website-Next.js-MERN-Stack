@@ -13,13 +13,13 @@ const CheckOut = () => {
   const [userData, setUserData] = useState(null);
   const [productDetails, setProductDetails] = useState([]);
   const shippingCharges = 5.8;
+  const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
 
   useEffect(() => {
-    const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
     if (!userId) return;
     const getUserById = async () => {
       try {
-        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/getUserById/${userId}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/user/getUserById/${userId}`);
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user by ID:', error);
@@ -30,13 +30,14 @@ const CheckOut = () => {
   }, []);
 
   const onFinish = async (values) => {
+    console.log(values);
+    console.log(userId);
     try {
       setLoading(true);
-      await axios.put(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/updateUser/${userId}`, values);
+      await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/user/updateUser/${userId}`, values);
       message.success('User information updated successfully');
     } catch (error) {
       message.error('Failed to update user information');
-      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -44,10 +45,10 @@ const CheckOut = () => {
 
   useEffect(() => {
     const userId = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('userData'))._id : null;
-    if (!userId) return; // Exit early if userId is not available
+    if (!userId) return;
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/getCartItem/${userId}`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/cart/getCartItem/${userId}`);
         const { products } = response.data.cartItem;
 
         if (response.data.cartItem.products.length === 0) {
@@ -55,7 +56,7 @@ const CheckOut = () => {
         }
 
         const productDetailPromises = products.map(async product => {
-          const productDetailResponse = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/getSingleProduct/${product.productId}`);
+          const productDetailResponse = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/getSingleProduct/${product.productId}`);
           const productDetail = productDetailResponse.data;
           return { ...product, ...productDetail };
         });

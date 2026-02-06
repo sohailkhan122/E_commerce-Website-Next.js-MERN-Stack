@@ -1,6 +1,6 @@
-'use client'
+"use client"
 import React, { useState } from 'react';
-import { Button, Form, Input, Spin } from 'antd';
+import { Button, Form, Input, message, Spin } from 'antd';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
@@ -12,10 +12,11 @@ const SignUp = () => {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const response = await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/user/register', values);
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user/register`, values);
+      message.success('Registration successful!');
       router.push('/login')
     } catch (error) {
-      console.error('Error:', error);
+      message.error(error.response.data.error);
     } finally {
       setLoading(false);
     }
@@ -37,9 +38,9 @@ const SignUp = () => {
             />
           </div>
           <div className="headerButton">
-            <Button onClick={() => router.push('/login')}>Login</Button>
-            <Button type="primary" className={pathname === '/signin' ? 'changeButtonColor' : ''}>SignUp</Button>
-            <Button style={{ backgroundColor: 'red', color: 'white' }} onClick={() => router.push('/admin_login')}>Admin</Button>
+            <Button suppressHydrationWarning onClick={() => router.push('/login')}>Login</Button>
+            <Button suppressHydrationWarning type="primary" className={pathname === '/signin' ? 'changeButtonColor' : ''}>SignUp</Button>
+            <Button suppressHydrationWarning style={{ backgroundColor: 'red', color: 'white' }} onClick={() => router.push('/admin_login')}>Admin</Button>
           </div>
         </div>
       </header>
@@ -94,7 +95,7 @@ const SignUp = () => {
               {loading ? (
                 <Spin style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
               ) : (
-                <Button style={{ width: '100%', backgroundColor: "#8A33FD" }} type="primary" htmlType="submit">
+                <Button suppressHydrationWarning style={{ width: '100%', backgroundColor: "#8A33FD" }} type="primary" htmlType="submit">
                   Submit
                 </Button>
               )}

@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import ArrivalCard from "./ArrivalCard";
 import { message } from "antd";
@@ -15,7 +16,7 @@ const NewArrival = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/productGetByName/New_Arrival");
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/productGetByName/New_Arrival`);
         setProducts(response.data);
         setLoading(false);
       } catch (error) {

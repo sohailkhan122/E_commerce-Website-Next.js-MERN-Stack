@@ -1,6 +1,6 @@
+"use client"
 import { Button } from "antd";
 import React from "react";
-import LimeLightCard from "../Home/LimeLightCard";
 
 const EmptyWishlist = () => {
 

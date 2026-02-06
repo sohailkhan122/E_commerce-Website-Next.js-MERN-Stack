@@ -16,7 +16,7 @@ app.use(cors())
 
 const connectDb = async () => {
     try {
-        const connect = await mongoose.connect('mongodb+srv://sohail:iamdeveloper@cluster0.xmzwts5.mongodb.net/?retryWrites=true&w=majority');
+        const connect = await mongoose.connect(process.env.MONGO_URL);
         console.log("Server Is Connected To Database");
     } catch (error) {
         console.log("Server Is Not Connected To Database", error.message);

@@ -21,7 +21,7 @@ const ProductDetails = ({ route }) => {
         const fetchProduct = async () => {
             try {
                 const productId = route?.id;
-                const response = await axios.get(`https://e-commerce-website-next-js-mern-stack-6.onrender.com/product/getSingleProduct/${productId}`);
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/product/getSingleProduct/${productId}`);
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {
@@ -52,7 +52,7 @@ const ProductDetails = ({ route }) => {
     const handleAddToCart = async () => {
         try {
             setAddingToCart(true);
-            await axios.post('https://e-commerce-website-next-js-mern-stack-6.onrender.com/cart/addToCart', {
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/cart/addToCart`, {
                 productId: product._id,
                 size,
                 color,
@@ -105,6 +105,7 @@ const ProductDetails = ({ route }) => {
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>
                         <Button
+
                             onClick={handleAddToCart}
                             style={{ paddingRight: "20px", height: "44px", background: 'blue', color: 'white' }}
                             icon={<ShoppingCartOutlined />}

@@ -3,17 +3,25 @@ const expressAsyncHandler = require("express-async-handler");
 const generateToken = require('../Config/generateToken');
 
 const loginController = expressAsyncHandler(async (req, res) => {
+  console.log(req.body)
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ error: "Please fill in all the fields" });
   }
-  const user = await UserModel.findOne({ email });
+  
+  const normalizedEmail = String(email).trim().toLowerCase();
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(normalizedEmail)) {
+    return res.status(400).json({ error: "Invalid email format" });
+  }
+
+  const user = await UserModel.findOne({ email: normalizedEmail });
 
   if (user && (await user.matchPassword(password))) {
     res.status(200).json(user);
   } else {
-    res.status(401).json({ error: "Invalid UserName or Password" });
+    res.status(401).json({ error: "Invalid email or Password" });
   }
 });
 
@@ -22,30 +30,35 @@ const registerController = expressAsyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) {
-    res.status(400).json({ mes: "All necessary input field have not filled" })
+     res.status(40).json({ error: "All fields are required" })
+  }
+  const normalizedEmail = email.trim().toLowerCase();
+  const emailRegex = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+  if (!emailRegex.test(normalizedEmail)) {
+    res.status(400).json({ error: "Invalid email format"})
   }
 
-  const userExist = await UserModel.findOne({ email });
+  const userExist = await UserModel.findOne({ email: normalizedEmail });
   if (userExist) {
-    res.status(422);
-    throw new Error("User Already Exists");
+    res.status(400).json({ error: "User already exists" });
   }
 
-  const user = new UserModel({ name, email, password });
+  const user = new UserModel({ name, email: normalizedEmail, password });
   await user.save();
+
   if (user) {
     res.status(201).json({
       _id: user._id,
       name: user.name,
       email: user.email,
-      token: generateToken(user._id)
-    })
-    console.log(user._id)
+      token: generateToken(user._id),
+    });
   } else {
-    res.status(400);
-    throw new Error("Registration Error");
+    res.status(400).json({ error: "Registration failed" });
   }
 });
+
 
 const updateUser = async (req, res) => {
   const {
@@ -61,6 +74,8 @@ const updateUser = async (req, res) => {
     postalcode,
     deliveryinstruction,
   } = req.body;
+  console.log('Received body:', req.body);
+  console.log('Received params:', req.params);
   const { userId } = req.params
 
   try {
